@@ -25,7 +25,16 @@ phantomcss.init({
     comparisonResultRoot: fs.absolute(fs.workingDirectory + '/phantomcss/diff/results'),
     cleanupComparisonImages: false,
     addIteratorToImage: false,
-    addLabelToFailedImage: false
+    addLabelToFailedImage: false,
+    onFail: function(test) { // to get base64 of image from terminal
+        console.log('===Diff===');
+        var file = test.filename.replace('.png', '.diff.png');
+        console.log(casper.base64encode(file));
+
+        console.log('===Fail===');
+        file = test.filename.replace('.png', '.fail.png');
+        console.log(casper.base64encode(file));
+    }
 });
 
 casper.test.begin('Visual testing', 1, function (test) {
