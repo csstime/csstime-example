@@ -1,0 +1,15 @@
+.icon {
+	@include mixin-sprite-icon();
+
+	&--blue {
+		@include mixin-sprite('color-blue');
+	}
+
+	&--red {
+		@include mixin-sprite('color-red');
+	}
+
+	&--yellow {
+		@include mixin-sprite('color-yellow');
+	}
+}

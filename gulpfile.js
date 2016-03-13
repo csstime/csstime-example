@@ -6,6 +6,7 @@ const csstime = require('csstime-gulp-tasks');
 
 config.useSvgSymbols = true; // custom configuration
 config.themedStylesFileNames = ['mobile']; // separated themes
-config.cdnPath = 'build/components/';
+config.cdnPath = 'components/';
+config.preprocessor = process.env.CSSTIME_PREPROCESSOR || 'less';
 
 csstime.loadGulpTasks(gulp, config);

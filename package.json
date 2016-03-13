@@ -4,7 +4,15 @@
   "description": "Example app for testing csstime-gulp-tasks",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run test-less && npm run test-sass",
+    "test-less": "npm run clean && npm run less-debug && npm run vtest && npm run clean && npm run less-release && npm run vtest",
+    "test-sass": "npm run clean && npm run sass-debug && npm run vtest && npm run clean && npm run sass-release && npm run vtest",
+    "less-debug": "export CSSTIME_PREPROCESSOR=less && ./node_modules/.bin/gulp csstime-mode-debug",
+    "less-release": "export CSSTIME_PREPROCESSOR=less && ./node_modules/.bin/gulp csstime-mode-release",
+    "sass-debug": "export CSSTIME_PREPROCESSOR=sass && ./node_modules/.bin/gulp csstime-mode-debug",
+    "sass-release": "export CSSTIME_PREPROCESSOR=sass && ./node_modules/.bin/gulp csstime-mode-release",
+    "vtest": "./node_modules/.bin/phantomjs ./test/suits.js",
+    "clean": "rm -rf ./build"
   },
   "repository": {
     "type": "git",
@@ -21,7 +29,10 @@
   },
   "homepage": "https://github.com/csstime/csstime-example#readme",
   "devDependencies": {
+    "casperjs": "^1.1.0-beta5",
     "csstime-gulp-tasks": "github:csstime/csstime-gulp-tasks#sass-support",
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "phantomcss": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.5"
   }
 }
