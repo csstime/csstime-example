@@ -30,7 +30,7 @@
   "homepage": "https://github.com/csstime/csstime-example#readme",
   "devDependencies": {
     "casperjs": "^1.1.0-beta5",
-    "csstime-gulp-tasks": "github:csstime/csstime-gulp-tasks#sass-support",
+    "csstime-gulp-tasks": "^6.0.0",
     "gulp": "^3.8.11",
     "phantomcss": "^1.0.0",
     "phantomjs-prebuilt": "^2.1.5"
