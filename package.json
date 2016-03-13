@@ -1,0 +1,27 @@
+{
+  "name": "csstime-example",
+  "version": "1.0.0",
+  "description": "Example app for testing csstime-gulp-tasks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csstime/csstime-example.git"
+  },
+  "keywords": [
+    "csstime",
+    "assets"
+  ],
+  "author": "Julia Rechkunova <julia.rechkunova@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/csstime/csstime-example/issues"
+  },
+  "homepage": "https://github.com/csstime/csstime-example#readme",
+  "devDependencies": {
+    "csstime-gulp-tasks": "github:csstime/csstime-gulp-tasks#sass-support",
+    "gulp": "^3.8.11"
+  }
+}
