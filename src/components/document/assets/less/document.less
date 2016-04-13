@@ -1,5 +1,11 @@
+@size-basis: 10;
+@size-row: 7 * @size-basis;
+
+@font-formular: 'Formular';
+
 .document {
 	display: flex;
 	flex-direction: column;
 	margin: 0;
+	font: 15px/~`@{size-row}` @font-formular;
 }
