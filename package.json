@@ -4,15 +4,23 @@
   "description": "Example app for testing csstime-gulp-tasks",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test-less && npm run test-sass",
     "test-less": "npm run clean && npm run less-debug && npm run vtest && npm run clean && npm run less-release && npm run vtest",
     "test-sass": "npm run clean && npm run sass-debug && npm run vtest && npm run clean && npm run sass-release && npm run vtest",
+    "test-stylus": "npm run clean && npm run stylus-debug && npm run vtest && npm run clean && npm run stylus-release && npm run vtest",
+
     "less-watch": "export CSSTIME_PREPROCESSOR=less && ./node_modules/.bin/gulp csstime-mode-watch",
     "less-debug": "export CSSTIME_PREPROCESSOR=less && ./node_modules/.bin/gulp csstime-mode-debug",
     "less-release": "export CSSTIME_PREPROCESSOR=less && ./node_modules/.bin/gulp csstime-mode-release",
+
     "sass-watch": "export CSSTIME_PREPROCESSOR=sass && ./node_modules/.bin/gulp csstime-mode-watch",
     "sass-debug": "export CSSTIME_PREPROCESSOR=sass && ./node_modules/.bin/gulp csstime-mode-debug",
     "sass-release": "export CSSTIME_PREPROCESSOR=sass && ./node_modules/.bin/gulp csstime-mode-release",
+
+    "stylus-watch": "export CSSTIME_PREPROCESSOR=stylus && ./node_modules/.bin/gulp csstime-mode-watch",
+    "stylus-debug": "export CSSTIME_PREPROCESSOR=stylus && ./node_modules/.bin/gulp csstime-mode-debug",
+    "stylus-release": "export CSSTIME_PREPROCESSOR=stylus && ./node_modules/.bin/gulp csstime-mode-release",
+
+    "test": "npm run test-less && npm run test-sass && npm run test-stylus",
     "vtest": "./node_modules/.bin/phantomjs ./test/suits.js",
     "clean": "rm -rf ./build"
   },
@@ -32,7 +40,7 @@
   "homepage": "https://github.com/csstime/csstime-example#readme",
   "devDependencies": {
     "casperjs": "^1.1.0-beta5",
-    "csstime-gulp-tasks": "csstime/csstime-gulp-tasks#develop",
+    "csstime-gulp-tasks": "csstime/csstime-gulp-tasks#feature/stylus-support",
     "gulp": "^3.8.11",
     "phantomcss": "^1.0.0",
     "phantomjs-prebuilt": "^2.1.5"
